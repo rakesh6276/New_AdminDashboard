@@ -43,6 +43,21 @@ color: black;
     color: #0000006e;
 }
 
+/* To display svg color in main dashboard */
+
+.thumbnail svg path{
+    fill: #0000006e !important;
+  }
+
+.thumbnail svg text{
+    fill: #0000006e !important;
+}
+
+.thumbnail path {
+    fill: #0000006e;
+  }
+
+
 .nav-tabs>li {
     float: right;
     margin-bottom: -1px;
