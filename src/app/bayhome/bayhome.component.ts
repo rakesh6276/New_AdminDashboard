@@ -29,10 +29,10 @@ export class BayhomeComponent implements OnInit {
     this.toolData = this._data1.getTools().subscribe(data =>{
       this._toolsListed = data as [any];
       
-      this.bay23 =  this._toolsListed.filter(data=>{
+      this.bay31 =  this._toolsListed.filter(data=>{
         return data.bay_number==31 && data.is_active == true
       });
-        this.bay23.forEach(function (value) {
+        this.bay31.forEach(function (value) {
         if(value.status === 'IN'){
           $('#bay31').css({fill: "#ffff80"});
         }
