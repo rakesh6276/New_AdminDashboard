@@ -46,7 +46,7 @@ color: black;
 /* To display svg color in main dashboard */
 
 .thumbnail svg path{
-    fill: #0000006e;
+    fill: #ff7f7f;
   }
 
 .thumbnail svg text{
@@ -54,7 +54,7 @@ color: black;
 }
 
 .thumbnail path {
-    fill: #0000006e;
+    fill: #ff7f7f;
   }
 
 
@@ -145,7 +145,7 @@ margin: -10px 0px 10px -40px;
     }
 
     .thumbnail svg {
-        font-size: 50px;
+    font-size: 50px;
     margin: 0px 0px 0px 31px;
     color: #0000006e;
     }
