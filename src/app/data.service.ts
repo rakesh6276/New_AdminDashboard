@@ -66,7 +66,7 @@ constructor(private http:HttpClient,private cookie:CookieService
     // }
 
     sendIdGetToolPage(id){
-      return this.http.get(this.apiRoot+'/api/test_tool_detail/'+id+'/').map((response:Response)=>{
+      return this.http.get(this.apiRoot+'/api/baytool/?bid='+id).map((response:Response)=>{
         return response;
       }).catch(this.handleError)
     }
