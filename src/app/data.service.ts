@@ -66,7 +66,7 @@ constructor(private http:HttpClient,private cookie:CookieService
     // }
 
     sendIdGetToolPage(id){
-      return this.http.get(this.apiRoot+'/api/baytool/?bid='+id).map((response:Response)=>{
+      return this.http.get(this.apiRoot+'/api/test_tool_detail/'+id+'/').map((response:Response)=>{
         return response;
       }).catch(this.handleError)
     }
@@ -91,12 +91,14 @@ constructor(private http:HttpClient,private cookie:CookieService
 
     getAllprojects(){
       return this.http.get(this.apiRoot+'/api/projects').map((response:Response)=>{
+          console.log('all projects',response);
           return response;
 
       }).catch(this.handleError);
     }
 
     saveNewProjects(data){
+      // console.log(data);
       return this.http.post(this.apiRoot+'/api/projects/',data).map((response:Response)=>{
         return response;
       }).catch(this.handleError)

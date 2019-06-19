@@ -434,23 +434,23 @@ export class BayhomeComponent implements OnInit {
                     }
                     })
 
-                    // this.bay18 =  this._toolsListed.filter(data=>{
-                    //   return data.bay_number==18 && data.is_active == true
-                    // });
-                    //   this.bay18.forEach(function (value) {
-                    //   if(value.status === 'IN'){
-                    //     $('#bay18').css({fill: "#ffff80"});
-                    //   }
-                    //   else if (value.status === 'ID') {
-                    //     $('#bay18').css({fill: "#ff7f7f"});
-                    //   }
-                    //   else if (value.status === 'PR') {
-                    //     $('#bay18').css({fill: "#c2de80"});
-                    //   }
-                    //   else if (value.status === 'MA') {
-                    //     $('#bay18').css({fill: "#9ac3f5"});
-                    //   }
-                    //   })
+                    this.bay18 =  this._toolsListed.filter(data=>{
+                      return data.bay_number==18 && data.is_active == true
+                    });
+                      this.bay18.forEach(function (value) {
+                      if(value.status === 'IN'){
+                        $('#bay18').css({fill: "#ffff80"});
+                      }
+                      else if (value.status === 'ID') {
+                        $('#bay18').css({fill: "#ff7f7f"});
+                      }
+                      else if (value.status === 'PR') {
+                        $('#bay18').css({fill: "#c2de80"});
+                      }
+                      else if (value.status === 'MA') {
+                        $('#bay18').css({fill: "#9ac3f5"});
+                      }
+                      })
 
               this.bay19 =  this._toolsListed.filter(data=>{
                 return data.bay_number==19 && data.is_active == true
@@ -488,23 +488,23 @@ export class BayhomeComponent implements OnInit {
                   }
                   })
 
-                // this.bay21 =  this._toolsListed.filter(data=>{
-                //   return data.bay_number==21 && data.is_active == true
-                // });
-                //   this.bay21.forEach(function (value) {
-                //   if(value.status === 'IN'){
-                //     $('#bay21').css({fill: "#ffff80"});
-                //   }
-                //   else if (value.status === 'ID') {
-                //     $('#bay21').css({fill: "#ff7f7f"});
-                //   }
-                //   else if (value.status === 'PR') {
-                //     $('#bay21').css({fill: "#c2de80"});
-                //   }
-                //   else if (value.status === 'MA') {
-                //     $('#bay21').css({fill: "#9ac3f5"});
-                //   }
-                //   })
+                this.bay21 =  this._toolsListed.filter(data=>{
+                  return data.bay_number==21 && data.is_active == true
+                });
+                  this.bay21.forEach(function (value) {
+                  if(value.status === 'IN'){
+                    $('#bay21').css({fill: "#ffff80"});
+                  }
+                  else if (value.status === 'ID') {
+                    $('#bay21').css({fill: "#ff7f7f"});
+                  }
+                  else if (value.status === 'PR') {
+                    $('#bay21').css({fill: "#c2de80"});
+                  }
+                  else if (value.status === 'MA') {
+                    $('#bay21').css({fill: "#9ac3f5"});
+                  }
+                  })
 
                 this.bay22 =  this._toolsListed.filter(data=>{
                   return data.bay_number==22 && data.is_active == true
