@@ -35,8 +35,9 @@ export class ReporttableComponent implements OnInit {
   reverse: boolean = false;
   term:any;
   tool:any;
+  reportGenerationStartDate : any;
+  reportGenerationEnddate : any;
   
- 
 
   constructor(private _service:DataService,private _orderPipe: OrderPipe, private ms:MomentService, private route:ActivatedRoute,
     private router:Router) { }
@@ -50,17 +51,6 @@ export class ReporttableComponent implements OnInit {
     })
     // tool name array end
     this.toolIdGeneral = this.route.snapshot.params['id'];
-
-    // this.sendIdGetToolPage(this.toolIdGeneral)
-
-
-   // this.messageSuccess = true;
-
- //   setTimeout(()=>{    //<<<---    using ()=> syntax
-          // this.messageSuccess = false;
-     //     this.callDateApply;
-   //       $('#reportrange').on('apply.daterangepicker');
-   //   }, 3000);
 
 setTimeout(function() {
   $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
@@ -97,12 +87,10 @@ setTimeout(()=> {
         startDate: this.start,
         endDate: this.end,
         ranges: {
-          //  'Today': [this.ms.moment(), this.ms.moment()],
            'Yesterday': [this.ms.moment().subtract(1, 'days'), this.ms.moment().subtract(1, 'days')],
            'Last 7 Days': [this.ms.moment().subtract(6, 'days'), this.ms.moment()],
            'Last 30 Days': [this.ms.moment().subtract(29, 'days'), this.ms.moment()],
            'This Month': [this.ms.moment().startOf('month'), this.ms.moment().endOf('month')],
-          //  'Last Month': [this.ms.moment().subtract(1, 'month').startOf('month'), this.ms.moment().subtract(1, 'month').endOf('month')]
           'Quaterly': [this.ms.moment().subtract(2, 'month').startOf('month'), this.ms.moment().subtract(1, 'days')]
 
         }
@@ -111,16 +99,6 @@ setTimeout(()=> {
     cb(this.start, this.end);
     
 },1000);
-
-//setTimeout(function() {
-//$('#reportrange').on('apply.daterangepicker', function(ev, picker) {
-//  this.callDateApply(ev, picker);
-  // this.callDateApply2(ev,picker);
-  
-   
-//}.bind(this));
-//}.bind(this),1000);
-
 
 function formatDate(date) {
   var monthNames = [
@@ -136,23 +114,6 @@ function formatDate(date) {
 
   return day + ' ' + monthNames[monthIndex] + ' ' + year;
 }
-
-
-// project ccode
-
-
-//setTimeout(()=>{    //<<<---    using ()=> syntax
-  // this.messageSuccess = false;
-//  this.callDateApply2;
-//  $('#reportrange1').on('apply.daterangepicker');
-  
-//}, 3000);
-
-
-
-
-
-
 setTimeout(()=> {
 this.start = this.ms.moment().subtract(29, 'days');
 this.end = this.ms.moment();
@@ -197,19 +158,12 @@ var year = date.getFullYear();
 return day + ' ' + monthNames[monthIndex] + ' ' + year;
 }
 
-// end of project code
-
-
-// start of tools name
-
 setTimeout(()=>{    //<<<---    using ()=> syntax
   // this.messageSuccess = false;
   this.callDateApply4;
   $('#reportrange2').on('apply.daterangepicker');
   
 }, 3000);
-
-
 
 setTimeout(()=> {
 this.start = this.ms.moment().subtract(29, 'days');
@@ -262,10 +216,7 @@ var monthIndex = date.getMonth();
 var year = date.getFullYear();
 
 return day + ' ' + monthNames[monthIndex] + ' ' + year;
-}
-// end of tool name
-
-  }
+} }
   
 //This function will pick start and end date
 callDateApply(ev ,picker){
@@ -283,14 +234,14 @@ callDateApply2(ev ,picker){
   this.callDateApply3(trend);
 }
 
-
+//select date tool report generaion 
 callDateApply4(ev ,picker){
-  
   let CurrentId = document.getElementById('reportrange2');
-
   let trend: object;
   let id: number;
   this.datesdata=trend;
+  this.reportGenerationStartDate = picker.startDate.format('YYYY-MM-DD');
+  this.reportGenerationEnddate = picker.endDate.format('YYYY-MM-DD');
   trend={startDate:picker.startDate.format('YYYY-MM-DD'),endDate:picker.endDate.format('YYYY-MM-DD')}
   this.callDateApply5(trend,id);
 }
@@ -299,65 +250,40 @@ callDateApply1(trend){
    if(!trend){
      let trend2:object;
      trend2={startDate:this.start.format('YYYY-MM-DD'),endDate:this.end.format('YYYY-MM-DD')}
-     let downloadurl1 = 'http://152.135.122.61:8871/api/export_tool_xls/?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
+     let downloadurl1 = 'http://152.135.122.61:8871/api/export_tool_xls/?start_date=' + this.reportGenerationStartDate +'&end_date='+ this.reportGenerationEnddate;
      window.open(downloadurl1);
-    //  this._service.sendDateGetReprts(trend2).subscribe(data=>{
-    //   //window.open(downloadurl1);
-    // })
   }
   else {
-    // let downloadurl2 = 'http://127.0.0.1:8000/api/export_tool_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
     let downloadurl2 = 'http://152.135.122.61:8871/api/export_tool_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
     window.open(downloadurl2);
-    // this._service.sendDateGetReprts(trend).subscribe(data=>{
-    //   //window.open(downloadurl2);
-    // })
-  //   let trend:object;
-//  trend={startDate:picker.startDate.format('YYYY-MM-DD'),
-//  endDate:picker.endDate.format('YYYY-MM-DD'),id:this.toolIdGeneral};
 }
 }
 
+// export excel button calling
 callDateApply3(trend){
    if(!trend){
      let trend2:object;
      trend2={startDate:this.start.format('YYYY-MM-DD'),endDate:this.end.format('YYYY-MM-DD')}
      console.log(trend2);
-     let downloadurl1 = 'http://152.135.122.61:8871/api/export_project_xls/?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
+     let downloadurl1 = 'http://152.135.122.61:8871/api/export_project_xls/?start_date=' + this.reportGenerationStartDate +'&end_date='+ this.reportGenerationEnddate;
      window.open(downloadurl1);
-    //  this._service.sendDateGetReprts(trend2).subscribe(data=>{
-    //   //window.open(downloadurl1);
-    // })
-
-    console.log('this.end--------------------------------------');
-    console.log('this.end',this.end);
   }
   else{
-    console.log('else----------------------------')
-    // let downloadurl2 = 'http://127.0.0.1:8000/api/export_tool_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
     let downloadurl2 = 'http://152.135.122.61:8871/api/export_project_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
     window.open(downloadurl2);
-    console.log('this.end--------------444444444444444444------------------------');
-    console.log('this.end',this.end);
     }
   }
 
-
+//tool excel button
   callDateApply5(trend,id){
     // var id:any;
-
-
      if(!trend){
        let trend2:object;
-       trend2={startDate:this.start.format('YYYY-MM-DD'),endDate:this.end.format('YYYY-MM-DD')}
-       let downloadurl1 = 'http://152.135.122.61:8871/api/export_tools/'+id+'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
+       trend2={startDate:this.reportGenerationStartDate,endDate:this.reportGenerationEnddate}
+       let downloadurl1 = 'http://152.135.122.61:8871/api/export_tools/'+id+'?start_date=' + this.reportGenerationStartDate +'&end_date='+ this.reportGenerationEnddate;
        window.open(downloadurl1);
-      //  this._service.sendDateGetReprts(trend2).subscribe(data=>{
-      //   //window.open(downloadurl1);
-      // })
     }
     else{
-      //  let downloadurl2 = 'http://127.0.0.1:8000/api/export_tool_xls/?start_date=' + trend.startDate +'&end_date='+ trend.endDate;
       let downloadurl2 = 'http://152.135.122.61:8871/api/export_tools/'+id+'?start_date=' + this.start.format('YYYY-MM-DD') +'&end_date='+ this.end.format('YYYY-MM-DD');
       window.open(downloadurl2);
       }
