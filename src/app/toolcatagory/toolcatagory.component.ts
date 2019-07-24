@@ -862,7 +862,7 @@ apiRoot: string = "http://152.135.122.61:8871";
     })
 
 
-    this.http.get(this.apiRoot+'/api/tool_category_data/21/').subscribe(data =>{
+    this.http.get(this.apiRoot+'/api/tool_category_data/116/').subscribe(data =>{
       this._labListed21 = data as [any];
       if (this._labListed21.Tool_efficiency === false) {
         $('#lab21').css({fill: "rgba(239, 9, 9, 0.78)"});
@@ -1095,7 +1095,7 @@ apiRoot: string = "http://152.135.122.61:8871";
     })
 
 
-    this.http.get(this.apiRoot+'/api/tool_category_data/27/').subscribe(data =>{
+    this.http.get(this.apiRoot+'/api/tool_category_data/46/').subscribe(data =>{
       this._labListed27 = data as [any];
       if (this._labListed27.Tool_efficiency === false) {
         $('#lab27').css({fill: "rgba(239, 9, 9, 0.78)"});
@@ -1293,7 +1293,7 @@ apiRoot: string = "http://152.135.122.61:8871";
     })
 
 
-    this.http.get(this.apiRoot+'/api/tool_category_data/33/').subscribe(data =>{
+    this.http.get(this.apiRoot+'/api/tool_category_data/102/').subscribe(data =>{
       this._labListed33 = data as [any];
       if (this._labListed33.Tool_efficiency === false) {
         $('#lab33').css({fill: "rgba(239, 9, 9, 0.78)"});
@@ -1555,37 +1555,37 @@ apiRoot: string = "http://152.135.122.61:8871";
     
         })
     
-        // this.http.get(this.apiRoot+'/api/tool_category_data/44/').subscribe(data =>{
-        //     this._labListed39a = data as [any];
-        //     if (this._labListed39a.Tool_efficiency === false) {
-        //       $('#lab39a').css({fill: "rgba(239, 9, 9, 0.78)"});
-        //     }
-        //     else if (this._labListed39a.Tool_efficiency === true) {
-        //       $('#lab39a').css({fill: "rgba(140, 192, 19, 0.88)"});
-        //     }
+        this.http.get(this.apiRoot+'/api/tool_category_data/114/').subscribe(data =>{
+            this._labListed39a = data as [any];
+            if (this._labListed39a.Tool_efficiency === false) {
+              $('#lab39a').css({fill: "rgba(239, 9, 9, 0.78)"});
+            }
+            else if (this._labListed39a.Tool_efficiency === true) {
+              $('#lab39a').css({fill: "rgba(140, 192, 19, 0.88)"});
+            }
       
-        //     $("#lab39a").hover(()=>{
-        //       if (this._labListed39a.Tool_Category === "Qualifications") {
-        //           $('#lab39a').css("fill", "rgb(125, 109, 196)");
-        //       }
-        //       else if (this._labListed39a.Tool_Category === "Field Issues") {
-        //           $('#lab39a').css("fill", "rgb(255, 193, 203)");
+            $("#lab39a").hover(()=>{
+              if (this._labListed39a.Tool_Category === "Qualifications") {
+                  $('#lab39a').css("fill", "rgb(125, 109, 196)");
+              }
+              else if (this._labListed39a.Tool_Category === "Field Issues") {
+                  $('#lab39a').css("fill", "rgb(255, 193, 203)");
       
-        //       }
-        //       else if (this._labListed39a.Tool_Category === "Process") {
-        //           $('#lab39a').css({fill: "#aee9ca"});
-        //       }
-        //   },
-        //    ()=> {
-        //       if (this._labListed39a.Tool_efficiency === false) {
-        //           $('#lab39a').css({fill: "rgba(239, 9, 9, 0.78)"});
-        //       }
-        //       else if (this._labListed39a.Tool_efficiency === true) {
-        //           $('#lab39a').css({fill: "rgba(140, 192, 19, 0.88)"});
-        //       }
-        //   });
+              }
+              else if (this._labListed39a.Tool_Category === "Process") {
+                  $('#lab39a').css({fill: "#aee9ca"});
+              }
+          },
+           ()=> {
+              if (this._labListed39a.Tool_efficiency === false) {
+                  $('#lab39a').css({fill: "rgba(239, 9, 9, 0.78)"});
+              }
+              else if (this._labListed39a.Tool_efficiency === true) {
+                  $('#lab39a').css({fill: "rgba(140, 192, 19, 0.88)"});
+              }
+          });
       
-        //   })
+          })
       
         //   this.http.get(this.apiRoot+'/api/tool_category_data/44/').subscribe(data =>{
         //       this._labListed39b = data as [any];
