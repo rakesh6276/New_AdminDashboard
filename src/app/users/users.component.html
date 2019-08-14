@@ -88,8 +88,8 @@
                   <h3 class="modal-title">Add Users<button type="button" class="close pull-right" (click)="newuser.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span> 
                 </button></h3>
-              </div>
-              
+            </div>   
+                        
               <div class="modal-body">
                           <div class="row">
                               <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
@@ -167,7 +167,46 @@
                                         'has-error':group.invalid && (group.dirty || group.touched),
                                         'has-success':group.valid && (group.dirty || group.touched)
                                     }">
-                                          <select name="category" class="form-control"
+
+
+                                    <!-- <div style="text-align: center;"> 
+                                        <button class="btn btn-success" 
+                                        (click)="newuser.hide();heroForm.rest()"
+                                         style="margin-right: 15px;color:black;font-family: Bree serif;
+                                         font-size: 16px;" (click)="newgroup.show()"><i class="fa fa-plus"></i>  Add Group</button> -->
+
+                                    <button id="button" class="btn btn-primary btn-lg"
+                                     data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>
+                                    Add group </button>
+                                        
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                              <label>Group</label>
+                                              <input type="text" 
+                                                class="form-control" 
+                                                name="group" id="user_group" 
+                                                placeholder="Enter Group Name" >
+                                            </div>
+                                            <button type="submit" 
+                                            class="btn btn-success" 
+                                            (click)="newuser.hide();heroForm.rest()"
+                                             style="margin-left: 251px;color:black;font-family: Bree serif;
+                                             font-size: 16px;">Submit</button>
+                                            <div class="modal-body">
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                                                         
+                                    
+                                            <select name="category" class="form-control"
                                             [(ngModel)]="users.group" required #group="ngModel"
                                              style="width: 160px;
                                              font-size: 12px;display: initial;">
@@ -177,8 +216,10 @@
                                               {{group.name}}
                                               </option>
                                           </select>
-                                          
+                                         <!-- </div>  -->
                                       </div>
+
+                                      
                                       <div class="form-group form-md-radios has-success">
                                           <div class="row">
                                           <div class="col-md-9">
@@ -245,5 +286,6 @@
   <script>
     TableDatatablesManaged.init();
   </script>
+  
   
   
