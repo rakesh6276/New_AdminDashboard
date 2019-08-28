@@ -265,12 +265,18 @@ getProjectList(){
 }
 
 saveNewuser(data){
+  console.log('1',data);
   return this.http.post(this.apiRoot+'/api/user/user_info/',data).map((response:Response)=>{
     return response;
   }).catch(this.handleError)
 }
 
-
+saveNewGroup(data){
+  console.log('2',data);
+  return this.http.post(this.apiRoot+'/api/user/usergroup/',{name:data}).map((response:Response)=>{
+    return response;
+  }).catch(this.handleError)
+}
 
 getgroups(){
 

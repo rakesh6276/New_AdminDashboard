@@ -176,36 +176,10 @@
                                          font-size: 16px;" (click)="newgroup.show()"><i class="fa fa-plus"></i>  Add Group</button> -->
 
                                     <button id="button" class="btn btn-primary btn-lg"
-                                     data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>
+                                     data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" ></i>
                                     Add group </button>
-                                        
-                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                              <label>Group</label>
-                                              <input type="text" 
-                                                class="form-control" 
-                                                name="group" id="user_group" 
-                                                placeholder="Enter Group Name" >
-                                            </div>
-                                            <button type="submit" 
-                                            class="btn btn-success" 
-                                            (click)="newuser.hide();heroForm.rest()"
-                                             style="margin-left: 251px;color:black;font-family: Bree serif;
-                                             font-size: 16px;">Submit</button>
-                                            <div class="modal-body">
-                                            </div>
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                                                         
-                                    
+                                                                                                                
+                                
                                             <select name="category" class="form-control"
                                             [(ngModel)]="users.group" required #group="ngModel"
                                              style="width: 160px;
@@ -263,26 +237,52 @@
                                 <button type="submit" 
                                 class="btn btn-success" 
                                 [disabled]="heroForm.invalid"
-                                (click)="newuser.hide();heroForm.rest()"
+                                (click)="newuser.hide();heroForm.reset()"
                                  style="margin-right: 15px;color:black;font-family: Bree serif;
                                  font-size: 16px;">Submit</button>
         
                                 <button class="btn btn-danger" (click)="newuser.hide();$event.preventDefault();">Cancel</button>
                             </div>
-                         </form>   
-                      </div>
-  
-                      
-  
+                                </form>   
+                             </div>
+
+
+                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                                    
+                                            <div class="modal-dialog" >
+                                              
+                                            <form #heroForm="ngForm" (ngSubmit)="enterGroupName(); heroForm.resetForm()" >
+                                                    <div class="modal fade" class="modal-content">
+                                                            <div class="modal-header">
+                                                               <label>Group</label>
+                                                               <button type="button" class="close" data-dismiss="modal"  aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                  </button>
+                                                              <input type="text" class="form-control" 
+                                                              name="group"  id="user_group" 
+                                                              placeholder="Enter Group Name" 
+                                                              [(ngModel)]="enter_group_name">
+                                                            </div>
+                                                            </div>
+                                                        
+                                                    <div class="modal-footer" style="text-align: center; " >
+                                                            <button type="submit" 
+                                                            class="btn btn-success" 
+                                                            [disabled]="heroForm.invalid"
+                                                        
+                                                           
+                                                             style="margin-top: -21px;color:black;font-family: Bree serif;
+                                                             font-size: 16px;">Submit</button>
+                                                        <!-- <button class="btn btn-danger" (click)="enterGroupName.hide();$event.preventDefault();">Cancel</button> -->
+                                                        </div>                                                    
+                                                </form>
+                            </div>
+                      </div>                  
                   </div>
               </div>
           </div>
-      
       </div>
   </div>
-        
-  
-  
   <script>
     TableDatatablesManaged.init();
   </script>
