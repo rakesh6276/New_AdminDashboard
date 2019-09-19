@@ -18,26 +18,23 @@ export class UsersComponent implements OnInit {
   term:any;
   groups:any;
   submitted=true
- 
-  
   enter_group_name: any;
+
   constructor(private _service:DataService,private router:Router) { }
   users : Addusers = new Addusers;
+  
   ngOnInit() {
-
     this._service.getAllusers().subscribe(data=>{
       this.getusers = data;
     })
     this.Getgroups();
   }
+
   saveNewUser(users){
     this._service.saveNewuser(users).subscribe(data=>{
-      // this.getusers=data;
-      // this.router.navigate(['/users']);
       this._service.getAllusers().subscribe(data=>{
         this.getusers = data;
       })
-
     })
   }
 
@@ -51,11 +48,9 @@ Getgroups(){
     console.log('value', this.enter_group_name);
     this._service.saveNewGroup(this.enter_group_name).subscribe(data=>{
       this.Getgroups();
-     
-
     })
+ }
 
-  }
 
   titleCaseWord1(str) {
     str = str.toLowerCase().split(' ');
