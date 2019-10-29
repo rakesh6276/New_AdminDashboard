@@ -528,7 +528,9 @@
                         }">
                             <div id="selectMargin">
                                 Select Users
+                                
                                 <select name="users" 
+                              
                                 [(ngModel)]="addtools.tool_users" multiple 
                                 class="form-control" required #tool_users="ngModel" 
                                 style="margin-left: 123px;width: 279px;font-size: 12px;display: initial;">
@@ -729,7 +731,7 @@
                                           </mat-select> -->
                                          
                                         <select name="usertool" class="form-control myselect-style" [(ngModel)]="usertool"  multiple (change)="userstool(usertool)">
-                                            <option value="" disabled>Choose Users</option>
+                                            <option value="usertool" disabled>Choose Users</option>
                                             <option *ngFor="let usertool of selectuserstool" [ngValue]="usertool">
                                             {{usertool.first_name}}&nbsp;{{usertool.last_name}}
                                             </option>

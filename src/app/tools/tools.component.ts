@@ -254,6 +254,7 @@ saveNewTools(tooldata){
 }
 userstool(names){
   this.toolsusers=names;
+  this.toolsusers.push(names)
 
 }
 assignuserstool(toolusers: TemplateRef<any>,tooldetails){
@@ -270,6 +271,7 @@ toolassignusers(details,id){
   for (let i = 0; i < details.length; i++) {
     details2.push(details[i]['id']);
    }
+   console.log(details2);
    let userobjects:object;
    userobjects={'user_ids':details2};
 
@@ -278,7 +280,8 @@ toolassignusers(details,id){
 
 }
 projectstool(names){
-  this.toolsprojects=names;
+  //this.toolsprojects=names;
+  this.toolsprojects.push(names)
 
 }
 assignprojecttool(toolprojects:TemplateRef<any>,tooldetails){

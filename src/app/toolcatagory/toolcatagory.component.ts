@@ -1556,32 +1556,32 @@ apiRoot: string = "http://152.135.122.61:8871";
         })
     
         this.http.get(this.apiRoot+'/api/tool_category_data/114/').subscribe(data =>{
-            this._labListed39a = data as [any];
-            if (this._labListed39a.Tool_efficiency === false) {
-              $('#lab39a').css({fill: "rgba(239, 9, 9, 0.78)"});
+            this._labListed39 = data as [any];
+            if (this._labListed39.Tool_efficiency === false) {
+              $('#lab39').css({fill: "rgba(239, 9, 9, 0.78)"});
             }
-            else if (this._labListed39a.Tool_efficiency === true) {
-              $('#lab39a').css({fill: "rgba(140, 192, 19, 0.88)"});
+            else if (this._labListed39.Tool_efficiency === true) {
+              $('#lab39').css({fill: "rgba(140, 192, 19, 0.88)"});
             }
       
-            $("#lab39a").hover(()=>{
-              if (this._labListed39a.Tool_Category === "Qualifications") {
-                  $('#lab39a').css("fill", "rgb(125, 109, 196)");
+            $("#lab39").hover(()=>{
+              if (this._labListed39.Tool_Category === "Qualifications") {
+                  $('#lab39').css("fill", "rgb(125, 109, 196)");
               }
-              else if (this._labListed39a.Tool_Category === "Field Issues") {
-                  $('#lab39a').css("fill", "rgb(255, 193, 203)");
+              else if (this._labListed39.Tool_Category === "Field Issues") {
+                  $('#lab39').css("fill", "rgb(255, 193, 203)");
       
               }
-              else if (this._labListed39a.Tool_Category === "Process") {
-                  $('#lab39a').css({fill: "#aee9ca"});
+              else if (this._labListed39.Tool_Category === "Process") {
+                  $('#lab39').css({fill: "#aee9ca"});
               }
           },
            ()=> {
-              if (this._labListed39a.Tool_efficiency === false) {
-                  $('#lab39a').css({fill: "rgba(239, 9, 9, 0.78)"});
+              if (this._labListed39.Tool_efficiency === false) {
+                  $('#lab39').css({fill: "rgb39(239, 9, 9, 0.78)"});
               }
-              else if (this._labListed39a.Tool_efficiency === true) {
-                  $('#lab39a').css({fill: "rgba(140, 192, 19, 0.88)"});
+              else if (this._labListed39.Tool_efficiency === true) {
+                  $('#lab39').css({fill: "rgba(140, 192, 19, 0.88)"});
               }
           });
       
