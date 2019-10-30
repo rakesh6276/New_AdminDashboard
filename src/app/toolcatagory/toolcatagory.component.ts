@@ -2087,70 +2087,70 @@ apiRoot: string = "http://152.135.122.61:8871";
   
       })
   
-      this.http.get(this.apiRoot+'/api/tool_category_data/93/').subscribe(data =>{
-        this._labListed47 = data as [any];
-        if (this._labListed47.Tool_efficiency === false) {
-          $('#lab47').css({fill: "rgba(239, 9, 9, 0.78)"});
-        }
-        else if (this._labListed47.Tool_efficiency === true) {
-          $('#lab47').css({fill: "rgba(140, 192, 19, 0.88)"});
-        }
+    //this.http.get(this.apiRoot+'/api/tool_category_data/93/').subscribe(data =>{
+    //    this._labListed47 = data as [any];
+    //    if (this._labListed47.Tool_efficiency === false) {
+    //      $('#lab47').css({fill: "rgba(239, 9, 9, 0.78)"});
+    //    }
+    //    else if (this._labListed47.Tool_efficiency === true) {
+    //      $('#lab47').css({fill: "rgba(140, 192, 19, 0.88)"});
+    //    }
   
-        $("#lab47").hover(()=>{
-          if (this._labListed47.Tool_Category === "Qualifications") {
-              $('#lab47').css("fill", "rgb(125, 109, 196)");
-          }
-          else if (this._labListed47.Tool_Category === "Field Issues") {
-              $('#lab47').css("fill", "rgb(255, 193, 203)");
+      //  $("#lab47").hover(()=>{
+      //    if (this._labListed47.Tool_Category === "Qualifications") {
+      //        $('#lab47').css("fill", "rgb(125, 109, 196)");
+      //    }
+      //    else if (this._labListed47.Tool_Category === "Field Issues") {
+      //        $('#lab47').css("fill", "rgb(255, 193, 203)");
   
-          }
-          else if (this._labListed47.Tool_Category === "Process") {
-              $('#lab47').css({fill: "#aee9ca"});
-          }
-      },
-       ()=> {
-          if (this._labListed47.Tool_efficiency === false) {
-              $('#lab47').css({fill: "rgba(239, 9, 9, 0.78)"});
-          }
-          else if (this._labListed47.Tool_efficiency === true) {
-              $('#lab47').css({fill: "rgba(140, 192, 19, 0.88)"});
-          }
-      });
+      //  }
+      //    else if (this._labListed47.Tool_Category === "Process") {
+      //        $('#lab47').css({fill: "#aee9ca"});
+      //    }
+      //},
+      // ()=> {
+      //    if (this._labListed47.Tool_efficiency === false) {
+      //        $('#lab47').css({fill: "rgba(239, 9, 9, 0.78)"});
+      //    }
+      //    else if (this._labListed47.Tool_efficiency === true) {
+      //        $('#lab47').css({fill: "rgba(140, 192, 19, 0.88)"});
+      //    }
+      //});
   
-      })
+      //})
   
     
-      this.http.get(this.apiRoot+'/api/tool_category_data/94/').subscribe(data =>{
-        this._labListed48 = data as [any];
-        if (this._labListed48.Tool_efficiency === false) {
-          $('#lab48').css({fill: "rgba(239, 9, 9, 0.78)"});
-        }
-        else if (this._labListed48.Tool_efficiency === true) {
-          $('#lab48').css({fill: "rgba(140, 192, 19, 0.88)"});
-        }
+    // this.http.get(this.apiRoot+'/api/tool_category_data/94/').subscribe(data =>{
+    //    this._labListed48 = data as [any];
+    //    if (this._labListed48.Tool_efficiency === false) {
+    //      $('#lab48').css({fill: "rgba(239, 9, 9, 0.78)"});
+    //    }
+    //    else if (this._labListed48.Tool_efficiency === true) {
+    //      $('#lab48').css({fill: "rgba(140, 192, 19, 0.88)"});
+    //    }
   
-        $("#lab48").hover(()=>{
-          if (this._labListed48.Tool_Category === "Qualifications") {
-              $('#lab48').css("fill", "rgb(125, 109, 196)");
-          }
-          else if (this._labListed48.Tool_Category === "Field Issues") {
-              $('#lab48').css("fill", "rgb(255, 193, 203)");
+    // $("#lab48").hover(()=>{
+    //      if (this._labListed48.Tool_Category === "Qualifications") {
+    //          $('#lab48').css("fill", "rgb(125, 109, 196)");
+    //      }
+    //      else if (this._labListed48.Tool_Category === "Field Issues") {
+    //          $('#lab48').css("fill", "rgb(255, 193, 203)");
   
-          }
-          else if (this._labListed48.Tool_Category === "Process") {
-              $('#lab48').css({fill: "#aee9ca"});
-          }
-      },
-       ()=> {
-          if (this._labListed48.Tool_efficiency === false) {
-              $('#lab48').css({fill: "rgba(239, 9, 9, 0.78)"});
-          }
-          else if (this._labListed48.Tool_efficiency === true) {
-              $('#lab48').css({fill: "rgba(140, 192, 19, 0.88)"});
-          }
-      });
+    //      }
+    //      else if (this._labListed48.Tool_Category === "Process") {
+    //          $('#lab48').css({fill: "#aee9ca"});
+    //      }
+    //  },
+    //   ()=> {
+    //      if (this._labListed48.Tool_efficiency === false) {
+    //          $('#lab48').css({fill: "rgba(239, 9, 9, 0.78)"});
+    //      }
+    //      else if (this._labListed48.Tool_efficiency === true) {
+    //          $('#lab48').css({fill: "rgba(140, 192, 19, 0.88)"});
+    //      }
+    //  });
   
-    })
+    //})
 
 
     // this._cumulativeLab = '';
