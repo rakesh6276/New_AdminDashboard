@@ -35,7 +35,7 @@ interface Tools{
 export class ToolsComponent implements OnInit, OnDestroy {
   toolsprojects: any=[];
   projectsid: any;
-  toolsusers: any=[];
+  toolsusers: any;
  
   selectuserstool:any;
   selectprojects:any;
@@ -252,11 +252,23 @@ saveNewTools(tooldata){
   })
 
 }
-userstool(names){
-  this.toolsusers=names;
-  this.toolsusers.push(names)
 
+
+// let fruits = ['banana', 'pear', 'apple']
+// fruits = fruits.concat('mango')
+
+userstool(names){
+  let toolsusers =[names]
+  toolsusers.length = 0;
+  toolsusers.push([names])
+  // this.toolsusers=names;
+  // this.toolsusers.push[names]
 }
+
+
+// e2491184a8cd52c883dfb25d00d3e543b8734da9
+
+
 assignuserstool(toolusers: TemplateRef<any>,tooldetails){
   this.tools=tooldetails;
   this._dashserve.sendIdGetUsers(tooldetails.id).subscribe(data=>{
@@ -271,7 +283,7 @@ toolassignusers(details,id){
   for (let i = 0; i < details.length; i++) {
     details2.push(details[i]['id']);
    }
-   console.log(details2);
+  //  console.log(details2);
    let userobjects:object;
    userobjects={'user_ids':details2};
 

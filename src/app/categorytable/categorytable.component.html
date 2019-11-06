@@ -66,6 +66,7 @@
             <th [class]="order === 'Tfirst_name'"
             (click)="setOrder('Tfirst_name')">Tool Owner <span [hidden]="reverse">▼</span
               ><span [hidden]="!reverse">▲</span></th>
+            <!-- <th [class]="order ==='Bay_Assigned_date'"(click)="setOrder('Bay_Assigned_date')">Bay Start Date</th> -->
             <th [class]="order === 'Tool_Category'"
             (click)="setOrder('Tool_Category')">Tool Category <span [hidden]="reverse">▼</span
               ><span [hidden]="!reverse">▲</span></th>
@@ -89,8 +90,8 @@
             
 
             <td>{{ cat.Tfirst_name }} {{ cat.Tlast_name}}</td>
+            <!-- <td>{{ cat.Bay_Assigned_date | date: 'medium'}}</td> -->
             
-
 
             <td [ngClass]="{'process' : cat.Tool_Category === 'Process', 'quall' : cat.Tool_Category === 'Qualifications', 'fissue' : cat.Tool_Category === 'Field Issues'}">{{ cat.Tool_Category }}</td>
            
