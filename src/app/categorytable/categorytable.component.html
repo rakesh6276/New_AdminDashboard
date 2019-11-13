@@ -90,7 +90,7 @@
             
 
             <td>{{ cat.Tfirst_name }} {{ cat.Tlast_name}}</td>
-            <td>{{ cat.Qend_date | date: 'medium'}}</td>
+            <!-- <td>{{ cat.Qend_date | date: 'medium'}}</td> -->
             
 
             <td [ngClass]="{'process' : cat.Tool_Category === 'Process', 'quall' : cat.Tool_Category === 'Qualifications', 'fissue' : cat.Tool_Category === 'Field Issues'}">{{ cat.Tool_Category }}</td>
