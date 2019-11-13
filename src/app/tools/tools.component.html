@@ -725,18 +725,35 @@
                                 </div>
                                 <div class="portlet-body form">
                                     <div class="row" style="width: 105%;">
+                                        <form class="example">
+                                            <input type="text" placeholder="Search.." name="search" [(ngModel)] ="users">
+                                            <!-- *ngFor="usertool of selectusers | customModalbody" -->
+                                            <button type="submit"><i class="fa fa-search"></i></button>
+                                            </form>
+                                            <!-- <ng-container *ngFor="let userstool of selectuserstool | filter : userstool">
+                                                    <button *ngIf="userstool!=users">
+                                                        {{userstool}}
+                                                    </button>
+                                                    </ng-container> -->
+                                            
+                                            <!-- <div class="row">
+                                                    <input type="text" class=" col-md-2 mySearch searchfont" name="search" placeholder="Search.."  [(ngModel)]="term">
+                                                </div> -->
                                         <!-- <mat-select placeholder="Select your Users" [(ngModel)]="selectedValue" [formControl]="toppings" multiple  (focusout)="onOut()">
                                             <option *ngFor="let users of selectusers" [ngValue]="users.first_name">
                                                 <mat-option *ngFor="let users of selectusers" [ngValue]="users.first_name"> {{users.first_name}}{{users.last_name}}</mat-option>
                                           </mat-select> -->
                                          
-                                        <select name="usertool" class="form-control myselect-style" [(ngModel)]="usertool"  multiple (change)="userstool(usertool)">
+                                        <select name="usertool" class="form-control myselect-style" [(ngModel)]="usertool" 
+                                         multiple (change)="userstool(usertool)">
                                             <option value="usertool" disabled>Choose Users</option>
                                             <option *ngFor="let usertool of selectuserstool" [ngValue]="usertool">
                                             {{usertool.first_name}}&nbsp;{{usertool.last_name}}
+                                           
                                             </option>
                                             
                                         </select>
+
                                     </div>
                                     <!-- <div class="form-actions noborder">
                                         <button type="button" (click)="toolassignusers(usertool,tools.id);modalRef.hide()" class="btn assign">Assign</button>
