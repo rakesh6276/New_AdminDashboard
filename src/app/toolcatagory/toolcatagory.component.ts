@@ -729,7 +729,7 @@ apiRoot: string = "http://152.135.122.61:8871";
     })
 
 
-    this.http.get(this.apiRoot+'/api/tool_category_data/119/').subscribe(data =>{
+    this.http.get(this.apiRoot+'/api/tool_category_data/120/').subscribe(data =>{
       this._labListed17 = data as [any];
       if (this._labListed17.Tool_efficiency === false) {
         $('#lab17').css({fill: "rgba(239, 9, 9, 0.78)"});
